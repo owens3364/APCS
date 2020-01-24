@@ -108,9 +108,9 @@ public class Main {
         inProgressPrograms.forEach((String val, Runnable runnable) -> System.out.println(val));
         System.out.println(COMPLETED);
         completedPrograms.forEach((String val, Runnable runnable) -> System.out.println(val));
+        System.out.println(PROGRAM_NAME_OR_EXIT);
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
-            System.out.println(PROGRAM_NAME_OR_EXIT);
             String programName = sc.nextLine();
             if (programName.equalsIgnoreCase(EXIT)) {
                 break;
