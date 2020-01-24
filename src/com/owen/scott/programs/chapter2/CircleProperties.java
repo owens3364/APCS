@@ -1,11 +1,11 @@
 package com.owen.scott.programs.chapter2;
 
-import com.owen.scott.annotations.InProgress;
+import com.owen.scott.annotations.Completed;
 import com.owen.scott.programs.commons.InputUtils;
 
 import java.util.Scanner;
 
-@InProgress
+@Completed
 public class CircleProperties implements Runnable {
     private static final String ENTER_RAD = "Enter the radius of the circle, or type '" + InputUtils.EXIT + "' to quit.";
     private final Scanner sc;
