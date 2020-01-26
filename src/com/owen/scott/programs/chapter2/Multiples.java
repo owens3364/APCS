@@ -24,9 +24,9 @@ public class Multiples implements Runnable {
     public void run() {
         while (true) {
             System.out.println(ENTER + FIRST + NUMBER_OR_QUIT);
-            double num1 = InputUtils.getInput(sc);
+            double num1 = InputUtils.getInputDouble(sc, (Double d) -> true);
             System.out.println(ENTER + SECOND + NUMBER_OR_QUIT);
-            double num2 = InputUtils.getInput(sc);
+            double num2 = InputUtils.getInputDouble(sc, (Double d) -> true);
             System.out.println(FIRST_NUMBER + (num1 % num2 == 0 ? "" : NOT) + MULTIPLE_OF_SECOND);
         }
     }

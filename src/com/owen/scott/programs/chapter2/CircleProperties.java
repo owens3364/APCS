@@ -18,7 +18,7 @@ public class CircleProperties implements Runnable {
     public void run() {
         while (true) {
             System.out.println(ENTER_RAD);
-            double radius = InputUtils.getInput(sc);
+            double radius = InputUtils.getInputDouble(sc, (Double d) -> true);
             System.out.printf("Diameter: %f\n", radius * 2);
             System.out.printf("Circumference: %f\n", radius * Math.PI);
             System.out.printf("Area: %f\n", radius * radius * Math.PI);

@@ -23,7 +23,7 @@ public class OddOrEven implements Runnable {
     public void run() {
         while (true) {
             System.out.println(ENTER_NUMBER);
-            System.out.println(YOUR_NUMBER_WAS + (InputUtils.getInput(sc) % 2 == 0 ? EVEN : ODD) + PERIOD);
+            System.out.println(YOUR_NUMBER_WAS + (InputUtils.getInputDouble(sc, (Double d) -> true) % 2 == 0 ? EVEN : ODD) + PERIOD);
         }
     }
 }

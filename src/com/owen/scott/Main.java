@@ -119,6 +119,7 @@ public class Main {
             inProgressPrograms.forEach((String val, Runnable runnable) -> {
                 if (programName.equalsIgnoreCase(val)) {
                     runnable.run();
+                    System.out.println(val + " completed.");
                     ran.set(true);
                 }
             });
@@ -126,6 +127,7 @@ public class Main {
                 completedPrograms.forEach((String val, Runnable runnable) -> {
                     if (programName.equalsIgnoreCase(val)) {
                         runnable.run();
+                        System.out.println(val + " completed.");
                         ran.set(true);
                     }
                 });

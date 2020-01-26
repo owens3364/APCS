@@ -31,7 +31,7 @@ public class NegativePositiveZeroValues implements Runnable {
             byte zeroCount = 0;
             System.out.println(ENTER_NUMBERS);
             for (int i = 0; i < entries.length; i++) {
-                entries[i] = InputUtils.getInput(sc);
+                entries[i] = InputUtils.getInputDouble(sc, (Double d) -> true);
                 if (entries[i] > 0) posCount++;
                 else if (entries[i] < 0) negCount++;
                 else zeroCount++;
