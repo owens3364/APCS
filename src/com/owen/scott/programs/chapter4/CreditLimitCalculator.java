@@ -31,7 +31,7 @@ public class CreditLimitCalculator implements Runnable {
             double credits = InputUtils.getInputDouble(sc, (Double d) -> d >= 0);
             System.out.println(ENTER_THE + "allowed credit limit.");
             double limit = InputUtils.getInputDouble(sc, (Double d) -> d >= 0);
-            double newBalance = balance - charges + credits;
+            double newBalance = balance + charges - credits;
             System.out.println("New balance: " + newBalance);
             if (newBalance > limit) System.out.println("Credit limit exceeded.");
         }
