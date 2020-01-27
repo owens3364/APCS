@@ -2,7 +2,6 @@ package com.owen.scott;
 
 import com.owen.scott.annotations.Completed;
 import com.owen.scott.annotations.InProgress;
-import kotlin.Pair;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,8 +33,8 @@ public class Main {
     }
 
     private static void populatePrograms() {
-        inProgressPrograms = new LinkedHashMap<>();
-        completedPrograms = new LinkedHashMap<>();
+        inProgressPrograms = new HashMap<>();
+        completedPrograms = new HashMap<>();
 
         Set<Class> potentialRunnables = new HashSet<>(getClasses(PACKAGE_PREFIX));
 
@@ -113,9 +112,9 @@ public class Main {
     private static void offerPrograms() {
         System.out.println(SELECT_PROGRAM);
         System.out.println(IN_PROGRESS);
-        inProgressPrograms.forEach((String val, Runnable runnable) -> System.out.println(val));
+        printAlphabetizedEntries(inProgressPrograms);
         System.out.println(COMPLETED);
-        completedPrograms.forEach((String val, Runnable runnable) -> System.out.println(val));
+        printAlphabetizedEntries(completedPrograms);
         System.out.println(CURRENCY_NOTE);
         System.out.println(PROGRAM_NAME_OR_EXIT);
         Scanner sc = new Scanner(System.in);
@@ -145,5 +144,12 @@ public class Main {
                 System.out.println(INVALID_INPUT);
             }
         }
+    }
+
+    private static void printAlphabetizedEntries(Map<String, Runnable> map) {
+        List<String> entries = new LinkedList<>();
+        map.forEach((String str, Object obj) -> entries.add(str));
+        Collections.sort(entries);
+        entries.forEach(System.out::println);
     }
 }
