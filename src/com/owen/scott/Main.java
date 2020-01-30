@@ -24,6 +24,9 @@ public class Main {
 
     private static final String CLASS_EXTENSION = ".class";
 
+    private static final String PROGRAMS = "programs";
+    private static final String CHAPTER = "chapter";
+
     private static Map<String, Runnable> inProgressPrograms;
     private static Map<String, Runnable> completedPrograms;
 
@@ -36,7 +39,7 @@ public class Main {
         inProgressPrograms = new HashMap<>();
         completedPrograms = new HashMap<>();
 
-        Set<Class> potentialRunnables = new HashSet<>(getClasses(PACKAGE_PREFIX));
+        Set<Class> potentialRunnables = new HashSet<>(classesFromRegistrar(getRegistrar()));
 
         potentialRunnables.forEach((Class potentialRunnable) -> {
             boolean isRunnable = false;
@@ -67,7 +70,8 @@ public class Main {
 
 
     private static List<Class> getClasses(String packageName) {
-        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        //ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         List<Class> classes = new LinkedList<>();
         if (classLoader != null) {
             Enumeration<URL> resources;
@@ -151,5 +155,56 @@ public class Main {
         map.forEach((String str, Object obj) -> entries.add(str));
         Collections.sort(entries);
         entries.forEach(System.out::println);
+    }
+
+    private static Set<Class> classesFromRegistrar(List<String> registrar) {
+        Set<Class> classes = new HashSet<>();
+        registrar.forEach((String className) -> {
+            try {
+                classes.add(Class.forName(className));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
+        return classes;
+    }
+
+    private static List<String> getRegistrar() {
+        List<String> registrar = new LinkedList<>();
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "2" + ".BMICalc");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "2" + ".Checkerboard");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "2" + ".CircleProperties");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "2" + ".Multiples");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "2" + ".NegativePositiveZeroValues");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "2" + ".OddOrEven");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "2" + ".SquaresAndCubesTable");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "3" + ".AccountTest");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "3" + ".EmployeeTest");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "3" + ".HeartRatesTest");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "3" + ".InvoiceTest");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "4" + ".CreditLimitCalculator");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "4" + ".GasMileage");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "4" + ".SalaryCalculator");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "4" + ".SalesCommissionCalculator");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "5" + ".Factorial");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "5" + ".ModifiedCompoundInterest");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "5" + ".ProductOfOddIntegers");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "5" + ".SmallestValue");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "6" + ".ComputerAssistedInstruction");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "6" + ".Exponentiation");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "6" + ".ParkingCharges");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "6" + ".TemperatureConversions");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "7" + ".AirlineReservationSystem");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "7" + ".DiceRolling");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "7" + ".TortoiseAndHare");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "7" + ".TotalSales");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "8" + ".EmployeeTest");
+        return registrar;
     }
 }

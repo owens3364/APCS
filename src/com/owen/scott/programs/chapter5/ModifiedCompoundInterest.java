@@ -6,10 +6,10 @@ import com.owen.scott.programs.commons.InputUtils;
 import java.util.Scanner;
 
 @Completed
-public class ModifiedCompountInterest implements Runnable {
+public class ModifiedCompoundInterest implements Runnable {
     private final Scanner sc;
 
-    public ModifiedCompountInterest() {
+    public ModifiedCompoundInterest() {
         sc = new Scanner(System.in);
     }
 
