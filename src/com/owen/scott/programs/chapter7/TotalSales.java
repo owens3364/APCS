@@ -1,12 +1,12 @@
 package com.owen.scott.programs.chapter7;
 
-import com.owen.scott.annotations.InProgress;
+import com.owen.scott.annotations.Completed;
 import com.owen.scott.programs.commons.InputUtils;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
-@InProgress
+@Completed
 public class TotalSales implements Runnable {
     private final Scanner sc;
 

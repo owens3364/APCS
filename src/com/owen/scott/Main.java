@@ -205,6 +205,16 @@ public class Main {
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "7" + ".TotalSales");
 
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "8" + ".EmployeeTest");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "14" + ".PigLatin");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "14" + ".RandomSentences");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "18" + ".Palindromes");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "18" + ".PrintAnArrayBackward");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "18" + ".MinimumValueInArray");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "19" + ".BubbleSort");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "19" + ".RecursiveBinSearch");
         return registrar;
     }
 }
