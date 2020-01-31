@@ -27,6 +27,8 @@ public class Main {
     private static final String PROGRAMS = "programs";
     private static final String CHAPTER = "chapter";
 
+    private static final String FRIDAY_BUILDS = "friday.builds";
+
     private static Map<String, Runnable> inProgressPrograms;
     private static Map<String, Runnable> completedPrograms;
 
@@ -215,6 +217,8 @@ public class Main {
 
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "19" + ".BubbleSort");
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "19" + ".RecursiveBinSearch");
+
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + ".LeapYearPaperBuild");
         return registrar;
     }
 }
