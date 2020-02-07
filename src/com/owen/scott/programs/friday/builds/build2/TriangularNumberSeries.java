@@ -6,11 +6,14 @@ import java.util.List;
 public class TriangularNumberSeries implements NumberSeries {
     @Override
     public List<Integer> getSeries(int length) {
-        return null;
+        return triangularNumberSeries(new LinkedList<>(), length);
     }
 
     private List<Integer> triangularNumberSeries(List<Integer> start, int length) {
         if (length == 0) return start;
+        int next = start.size() + 1;
+        start.add(next);
         start.addAll(triangularNumberSeries(start, length - 1));
+        return start;
     }
 }
