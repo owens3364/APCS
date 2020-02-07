@@ -6,7 +6,7 @@ import java.util.List;
 public class FibonacciNumberSeries implements NumberSeries {
     @Override
     public List<Integer> getSeries(int length) {
-        return fibonacciNumberSeries(new LinkedList<>(), length);
+        return fibonacciNumberSeries(new LinkedList<>(), length).subList(0, length);
     }
 
     private List<Integer> fibonacciNumberSeries(List<Integer> start, int length) {
@@ -18,7 +18,7 @@ public class FibonacciNumberSeries implements NumberSeries {
         } else {
             start.add(start.get(start.size() - 2) + start.get(start.size() - 1));
         }
-        start.addAll(fibonacciNumberSeries(start, length - 1));
+        start.add(fibonacciNumberSeries(start, length - 1).get(start.size() - 1));
         return start;
     }
 }
