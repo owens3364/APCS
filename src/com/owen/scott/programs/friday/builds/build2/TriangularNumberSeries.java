@@ -11,7 +11,7 @@ public class TriangularNumberSeries implements NumberSeries {
 
     private List<Integer> triangularNumberSeries(List<Integer> start, int length) {
         if (length == 0) return start;
-        int next = start.size() + 1;
+        int next = start.size();
         start.add(next);
         start.addAll(triangularNumberSeries(start, length - 1));
         return start;

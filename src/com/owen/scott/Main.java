@@ -220,7 +220,7 @@ public class Main {
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + CHAPTER + "19" + ".RecursiveBinSearch");
 
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "1." + ".LeapYearPaperBuild");
-        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "2." + ".LeapYearPaperBuild");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "2." + ".Executor");
         return registrar;
     }
 }
