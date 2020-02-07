@@ -12,7 +12,7 @@ public class Executor implements Runnable {
         NumberSeries pyramidalSeries = new PyramidalNumberSeries();
         NumberSeries triangularSeries = new TriangularNumberSeries();
         System.out.println(formatIntList(fibonacciSeries.getSeries(15)));
-        //System.out.println(formatIntList(pyramidalSeries.getSeries(15)));
+        System.out.println(formatIntList(pyramidalSeries.getSeries(15)));
         System.out.println(formatIntList(triangularSeries.getSeries(15)));
     }
 
