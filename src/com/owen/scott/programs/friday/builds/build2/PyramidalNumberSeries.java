@@ -1,13 +1,19 @@
 package com.owen.scott.programs.friday.builds.build2;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class PyramidalNumberSeries implements NumberSeries {
     @Override
     public List<Integer> getSeries(int length) {
-        return null;
+        List<Integer> series = new LinkedList<>();
+        for (int i = 0; i < length; i++) {
+            series.add(pentagonPyrimidal(i));
+        }
+        return series;
     }
-   int pentagon_pyrimidal (int n)
+
+   int pentagonPyrimidal (int n)
    {
        int sum = 0;
        //run loop from 1 to n
