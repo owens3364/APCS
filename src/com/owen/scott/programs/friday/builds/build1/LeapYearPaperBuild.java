@@ -1,4 +1,4 @@
-package com.owen.scott.programs.friday.builds;
+package com.owen.scott.programs.friday.builds.build1;
 
 import com.owen.scott.annotations.Completed;
 
