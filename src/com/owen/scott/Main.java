@@ -221,6 +221,7 @@ public class Main {
 
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "1" + ".LeapYearPaperBuild");
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "2" + ".Executor");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "3" + ".ShapeExecutor");
         return registrar;
     }
 }

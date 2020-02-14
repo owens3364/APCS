@@ -1,10 +1,10 @@
 package com.owen.scott.programs.friday.builds.build2;
 
-import com.owen.scott.annotations.InProgress;
+import com.owen.scott.annotations.Completed;
 
 import java.util.List;
 
-@InProgress
+@Completed
 public class Executor implements Runnable {
     @Override
     public void run() {

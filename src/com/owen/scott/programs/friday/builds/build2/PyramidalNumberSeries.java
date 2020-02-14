@@ -8,22 +8,13 @@ public class PyramidalNumberSeries implements NumberSeries {
     public List<Integer> getSeries(int length) {
         List<Integer> series = new LinkedList<>();
         for (int i = 0; i < length; i++) {
-            series.add(pentagonPyrimidal(i));
+            series.add(pentagonPyramidal(i));
         }
         return series;
     }
 
-   int pentagonPyrimidal (int n)
-   {
-       int sum = 0;
-       //run loop from 1 to n
-       for (int i = 1; i <= n; i++)
-       {
-           //get nth pentagonal number
-           int p = (3 * i * i - i) /2;
-           //add to sum
-           sum = sum +p;
-       }
-       return sum;
+   int pentagonPyramidal(int n) {
+       if (n == 0 || n == 1) return n;
+       return (n * n) + pentagonPyramidal(n - 1);
    }
 }
