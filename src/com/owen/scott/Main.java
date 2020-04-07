@@ -225,6 +225,7 @@ public class Main {
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "4" + ".FizzBuzz");
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "5" + ".PartI");
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "5" + ".PartII");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "6" + ".PrimeNumberFinder");
         return registrar;
     }
 }
