@@ -45,17 +45,16 @@ public class Main {
         Set<Class> potentialRunnables = new HashSet<>(classesFromRegistrar(getRegistrar()));
 
         potentialRunnables.forEach((Class potentialRunnable) -> {
-            boolean isRunnable = false;
             for (Class anInterface : potentialRunnable.getInterfaces()) {
                 if (anInterface == Runnable.class) {
-                    isRunnable = true;
+                    if (potentialRunnable.isAnnotationPresent(InProgress.class)) {
+                        addPotentialRunnableToMap(inProgressPrograms, potentialRunnable);
+                    }
+                    if (potentialRunnable.isAnnotationPresent(Completed.class)) {
+                        addPotentialRunnableToMap(completedPrograms, potentialRunnable);
+                    }
+                    break;
                 }
-            }
-            if (isRunnable && potentialRunnable.isAnnotationPresent(InProgress.class)) {
-                addPotentialRunnableToMap(inProgressPrograms, potentialRunnable);
-            }
-            if (isRunnable && potentialRunnable.isAnnotationPresent(Completed.class)) {
-                addPotentialRunnableToMap(completedPrograms, potentialRunnable);
             }
         });
     }
@@ -226,6 +225,7 @@ public class Main {
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "5" + ".PartI");
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "5" + ".PartII");
         registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "6" + ".PrimeNumberFinder");
+        registrar.add(PACKAGE_PREFIX + "." + PROGRAMS + "." + FRIDAY_BUILDS + BUILD + "7" + ".PythagoreanTripleFinder");
         return registrar;
     }
 }
