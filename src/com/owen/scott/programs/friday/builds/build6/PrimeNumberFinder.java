@@ -1,12 +1,12 @@
 package com.owen.scott.programs.friday.builds.build6;
 
-import com.owen.scott.annotations.InProgress;
+import com.owen.scott.annotations.Completed;
 import com.owen.scott.programs.commons.InputUtils;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-@InProgress
+@Completed
 public class PrimeNumberFinder implements Runnable {
     private final Scanner sc;
 
