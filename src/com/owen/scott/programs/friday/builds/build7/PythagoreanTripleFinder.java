@@ -51,9 +51,11 @@ public class PythagoreanTripleFinder implements Runnable {
         System.out.println("The programs are implemented via ints and longs rather than BigIntegers.");
         System.out.println("Those would be a viable replacement, if I were willing to put in the effort to deal with them :)");
         System.out.println("Here is a program that creates Pythagorean triples based on multiples of the original Pythagorean triple (3, 4, 5).");
+        System.out.println("It has a performance of O(n) which is significantly better than the brute force approach.");
         System.out.println("How many triples would you like to find?");
         triplesByMultiplesOfOrigin(InputUtils.getInputInt(sc, (Integer in) -> in > 0));
         System.out.println("Here is another program that uses matrix multiplication to find primitive Pythagorean triples, ie triples that have no common divisors across a, b, and c.");
+        System.out.println("It also has O(n) performance, although its output is generally higher than requested. See the note below.");
         System.out.println("How many triples would you like to find?");
         System.out.println("Note: the program will almost always produce more triples than requested, because it is an infinite ternary tree and is terminated via a node-depth check.");
         primitiveTriples(InputUtils.getInputInt(sc, (Integer in) -> in > 0));
